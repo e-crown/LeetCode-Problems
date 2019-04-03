@@ -1,3 +1,4 @@
+package com.leetcode.problems;
 /**
  * @Description TODO
  * @Author cgc
@@ -29,6 +30,7 @@
  * @Version 1.0
  */
 public class ReverseNumers {
+
     public int reverse(int x) {
 
         int n = x;
@@ -36,16 +38,14 @@ public class ReverseNumers {
         if(x < 0 ){
             b = -(long)x;
         }
-        long  s = b;
-        int c = 1;
-        while (b != 0 && ( b /= 10) > 0){
-            c++;
-        }
         long m = 0;
-        for (int i = c - 1; i >= 0; i--) {
-            m += (s%10)*((long)Math.pow(10,i));
-            s /= 10;
+        long c = 0;
+        while (b != 0){
+            c = b % 10;
+            m = m * 10 + c;
+            b /= 10;
         }
+
         if(n < 0){
             m = -(-m < Integer.MIN_VALUE?0:m);
         }else{
@@ -60,6 +60,6 @@ public class ReverseNumers {
 //        System.out.println(1<<31 -1 );
 //        System.out.println(1056389759 > Integer.MAX_VALUE);
 //        System.out.println((long)Math.abs(Integer.MIN_VALUE)/2);
-        System.out.println(new ReverseNumers().reverse(-2147483648));
+        System.out.println(new ReverseNumers().reverse(-12000));
     }
 }
