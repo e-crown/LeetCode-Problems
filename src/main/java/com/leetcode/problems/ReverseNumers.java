@@ -1,4 +1,4 @@
-package com.leetcode.problems;
+package leetcode.problems;
 /**
  * @Description TODO
  * @Author cgc

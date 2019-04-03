@@ -1,11 +1,5 @@
+package leetcode.problems;
 
-/*
- * @Author cgc
- * @Description //TODO 
- * @Date 22:17 2019/4/2/002
- * @Param 
- * @return 
- **/
 public class TwoNumSum {
 
     /**
@@ -18,7 +12,6 @@ public class TwoNumSum {
      所以返回 [0, 1]
      * //TODO 【Accept】
      */
-
     public int[] twoSum(int[] nums, int target) {
 
         for (int i = 0; i < nums.length - 1; i++) {
