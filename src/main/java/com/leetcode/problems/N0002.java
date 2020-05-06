@@ -1,4 +1,4 @@
-package leetcode.problems;
+package com.leetcode.problems;
 
 /**
  * @Description TODO

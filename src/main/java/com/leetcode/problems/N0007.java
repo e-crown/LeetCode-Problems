@@ -29,7 +29,7 @@ package leetcode.problems;
  * @Date 2019/4/2/002 22:47
  * @Version 1.0
  */
-public class ReverseNumers {
+public class N0007 {
 
     public int reverse(int x) {
 
@@ -60,6 +60,6 @@ public class ReverseNumers {
 //        System.out.println(1<<31 -1 );
 //        System.out.println(1056389759 > Integer.MAX_VALUE);
 //        System.out.println((long)Math.abs(Integer.MIN_VALUE)/2);
-        System.out.println(new ReverseNumers().reverse(-12000));
+        System.out.println(new N0007().reverse(-12000));
     }
 }

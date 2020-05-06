@@ -1,8 +1,8 @@
-package leetcode.problems;
+package com.leetcode.problems;
 
 
-public class Atoi {
-    /** 
+public class N0008 {
+    /**
     * @Description:
      * 请你来实现一个 atoi 函数，使其能将字符串转换成整数。
 
@@ -47,10 +47,10 @@ public class Atoi {
     输出: -2147483648
     解释: 数字 "-91283472332" 超过 32 位有符号整数范围。
     因此返回 INT_MIN (−231) 。
-    * @Param:  
+    * @Param:
     * @Return:
     * @Author: cgc
-    * @Date: 2019/4/3 
+    * @Date: 2019/4/3
     */
     public int myAtoi(String str) {
 
@@ -129,6 +129,6 @@ public class Atoi {
 //        System.out.println(Integer.MIN_VALUE);
 //          System.out.println(new StringBuilder("\0").charAt(0) == '\0');
 //          System.out.println(new StringBuilder("12345").deleteCharAt(2));
-        System.out.println(new Atoi().myAtoi("  -0000000000012345678"));
+        System.out.println(new N0008().myAtoi("  -0000000000012345678"));
     }
 }
