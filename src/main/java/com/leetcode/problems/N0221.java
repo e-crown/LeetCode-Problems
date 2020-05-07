@@ -29,31 +29,72 @@ import java.util.Scanner;
  */
 public class N0221 {
 
-
+    private static int[][] MAX_SQUARE;
+    private static int Max = 0;
 
     public int maximalSquare(char[][] matrix) {
-        return matrix_x_y(matrix,0,0);
+         if(matrix == null || matrix.length == 0 ) return 0;
+         MAX_SQUARE = new int[matrix.length][matrix[0].length];
+
+        for (int x = 0; x < matrix.length; x++) {
+
+            for (int y = 0; y < matrix[0].length; y++) {
+
+                if( matrix[x][y] == '0'){
+                    continue;
+                }
+                for (int k = 1; k < matrix[0].length - y && k < matrix.length - x; k++) {
+                    if(isOne(matrix,x,y,k)){
+                        Max = Math.max(Max,(MAX_SQUARE[x][y] = k));
+                    }else {
+                        break;
+                    }
+                }
+
+            }
+        }
+        return (Max+1)*(Max+1);
     }
 
-    private int matrix_x_y(char[][] matrix, int i, int i1) {
 
-        return 0;
+    private boolean isOne(char[][] matrix,int i,int j,int K) {
+        boolean isOne = true;
+        for (int x = 0; x <= K; x++) {
+            if(matrix[i+x][j+K]  == '0') {
+                isOne = false;
+                break;
+            }
+        }
+        for (int y = 0; isOne && y <= K; y++) {
+            if(matrix[i+K][j+y]  == '0') {
+                isOne = false;
+                break;
+            }
+        }
+        return isOne;
     }
 
     public static void main(String[] args) {
         N0221 n0221 = new N0221();
         Scanner sc = new Scanner(System.in);
-        int MAX = sc.nextInt();
-        String input = null;
-        char[][] matrix = new char[MAX][MAX];
-        for (int i = 0; i < MAX; i++) {
-            for (int j = 0; j < MAX; j++) {
-                matrix[j][i]  = (char) (sc.nextInt()+'0');
+        int M = sc.nextInt();
+        int N = sc.nextInt();
+
+        char[][] matrix = new char[M][N];
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
+                matrix[i][j]  = (char)(sc.nextInt()+'0');
             }
         }
-        ArrayList<char[]> chars = Lists.newArrayList(matrix);
-//        n0221.maximalSquare(matrix);
+        Max = n0221.maximalSquare(matrix);
 
+        for (int i = 0; i < M; i++) {
+            for (int j = 0; j < N; j++) {
+                System.out.print((MAX_SQUARE[i][j]+" "));
+            }
+            System.out.println();
+        }
+        System.out.println("Max="+Max);
     }
 
 }
